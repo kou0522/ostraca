@@ -1,6 +1,6 @@
 node{
     stage('scm'){
-        check scm
+        checkout scm
     }
 
     stage('first job'){
