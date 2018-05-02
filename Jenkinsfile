@@ -1,11 +1,14 @@
-node{
+node {
     stage('scm'){
         checkout scm
     }
 
     stage('first job'){
-        sh "hello jenkins from jenkinsfile"
+        sh "echo 'Hello Jenkins from Jenkinsfile'"
+    }
+
+    stage('third job'){
+        sh "echo test"
     }
 
 }
-
