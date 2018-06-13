@@ -18,7 +18,7 @@ node {
         //現在のGreenサーバの情報(AWS関係)を取得
         dir("${tf_pash}"){
             option = "\$3"
-            id = sh returnStdout: true, script: "${terraform} state show aws_lb_target_group_attachment.green_attach | grep targer_id | awk '{print ${option}}'"
+            id = sh returnStdout: true, script: "${terraform} state show aws_lb_target_group_attachment.green_attach | grep target_id | awk '{print ${option}}'"
         }
     sh "echo ${id}"
     }
