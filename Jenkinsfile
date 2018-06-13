@@ -19,7 +19,7 @@ node {
         dir("${tf_pash}"){
             option = "\$3"
         }
-        id = sh returnStdout: true, script: "${terraform} state show terraform state show aws_lb_terger_group_attachment.green_attach | grep targer_id | awk '{print ${option}}'"
+        id = sh returnStdout: true, script: "${terraform} state show aws_lb_terger_group_attachment.green_attach | grep targer_id | awk '{print ${option}}'"
     }
     sh "echo ${id}"
 
