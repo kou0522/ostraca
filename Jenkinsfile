@@ -20,10 +20,10 @@ node {
             option = "\$3"
             id = sh returnStdout: true, script: "${terraform} state show aws_lb_target_group_attachment.green_attach | grep target_id | awk '{print ${option}}'"
             try{
-                result = sh returnStdout: true, script: "${terraform} state show aws_instance.2anet_server1 | grep ${id}"
-                cgreen_name = "2anet_server1"
-            }catch(exception){
+                result = sh returnStdout: true, script: "${terraform} state show aws_instance.2anet_server2 | grep ${id}"
                 cgreen_name = "2anet_server2"
+            }catch(exception){
+                cgreen_name = "2anet_server1"
             }
         }
         sh "echo ${cgreen_name}"
