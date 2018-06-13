@@ -20,7 +20,7 @@ node {
             option = "\$3"
             id = sh returnStdout: true, script: "${terraform} state show aws_lb_target_group_attachment.green_attach | grep target_id | awk '{print ${option}}'"
         }
-    sh "echo ${id}"
+        sh "echo ${id}"
     }
 
     stage('Destroy of the current green server'){
