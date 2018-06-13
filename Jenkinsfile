@@ -33,7 +33,7 @@ node {
         //現在のGreenサーバを破棄
         dir("${tf_path}"){
             sh "${terraform} destroy -auto-approve -target=aws_instance.${cgreen_name} ./stage1"
-        }  
+        }
     }
 
     stage('Create new blue server instance'){
