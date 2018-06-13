@@ -24,6 +24,7 @@ node {
                 cgreen_name = "2anet_server2"
             }catch(exception){
                 cgreen_name = "2anet_server1"
+            }
         }
         sh "echo ${cgreen_name}"
     }
