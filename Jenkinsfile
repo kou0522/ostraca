@@ -52,7 +52,7 @@ node {
             option = "\$3"
             ip = sh returnStdout: true, script: "${terraform} state show aws_instance.${cgreen_name} | egrep '^public_ip' | awk '{print ${option}}'"
     }
-    sh "echo ${ip}"
+        sh "echo ${ip}"
     dir("${ansible_path}"){
         
     }
