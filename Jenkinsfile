@@ -68,8 +68,8 @@ node {
     stage('Switch the new blue server'){
         //現Blueサーバと新BlueサーバのTargetGroupを切り替える
         dir("${tf_path}"){
-            new_green_id= sh returnStdout: true, script: "${terraform} state show aws_ld_terget_group_attachment.blue_attach | grep target_id | awk '{print ${options}}' | tr -d '\n'"
-            new_blue_id= sh returnStdout: true, script: "${terraform} state show aws_ld_terget_group_attachment.green_attach | grep target_id | awk '{print ${options}}' | tr -d '\n'"
+            new_green_id= sh returnStdout: true, script: "${terraform} state show aws_ld_target_group_attachment.blue_attach | grep target_id | awk '{print ${options}}' | tr -d '\n'"
+            new_blue_id= sh returnStdout: true, script: "${terraform} state show aws_ld_target_group_attachment.green_attach | grep target_id | awk '{print ${options}}' | tr -d '\n'"
             sh "${terraform} apply -auto-approve -var blue_server_id=${new_blue_id} -var green_server_id=${new_green_id} ./stage2"
         }
     }
