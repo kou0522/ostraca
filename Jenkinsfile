@@ -1,6 +1,6 @@
 def jenkins_path = "/var/lib/jenkins"
 def tf_path      = "${jenkins_path}/terraform/build"
-def ancible_path = "${jenkins_path}/ancible"
+def ansible_path = "${jenkins_path}/ansible"
 def terraform    = "/usr/local/bin/terraform"
 
 def cgreen_name = ""
